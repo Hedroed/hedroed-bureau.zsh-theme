@@ -1,4 +1,4 @@
-# My Oh-My-Zsh Theme
+# My Oh-My-Zsh Theme (Hedreod Fork)
 
 ![](preview.png)
 
@@ -15,6 +15,16 @@ Then, to enable it, set `ZSH_THEME` to `hedroed-bureau` in your `~/.zshrc`, befo
 plugins=(git brew encode64 phing colorize copydir copyfile dirhistory autojump web-search osx)
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 ```
+
+# Improvement
+
+Show python version if a `.py` file is detected in current directory.
+Show docker version if a `docker-compose.yml` or a `Dockerfile` is detected in current directory.
+
+Show current virtualenv name.
+Show if a proxy is set in HTTP_PROXY env.
+
+
 
 # Sources
 
