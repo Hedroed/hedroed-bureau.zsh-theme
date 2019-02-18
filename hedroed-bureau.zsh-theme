@@ -5,8 +5,8 @@
 ZSH_THEME_GIT_PROMPT_PREFIX=" [%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
@@ -68,9 +68,9 @@ bureau_git_prompt () {
   echo $_result
 }
 
-### NVM ⬡8.10.10
+### NVM ⬡8.10.10 
 
-ZSH_THEME_NVM_PROMPT_PREFIX=" ⬡ "
+ZSH_THEME_NVM_PROMPT_PREFIX=" "
 ZSH_THEME_NVM_PROMPT_SUFFIX=""
 nvm_prompt_info () {
     [ ! -z `ls -1 | grep \.js$ | head -1` ] || return
@@ -82,26 +82,26 @@ nvm_prompt_info () {
 	echo "${ZSH_THEME_NVM_PROMPT_PREFIX}${nvm_prompt}${ZSH_THEME_NVM_PROMPT_SUFFIX}"
 }
 
-### Python 🐍3.6.3
+### Python 🐍3.6.3 
 
 python_prompt_info () {
   if which python 2>/dev/null 1>/dev/null && [ ! -z `ls | grep \.py$ | head -1` ] ; then
     PYTHON_VERSION=`python -c 'import platform; print(platform.python_version())'`
-    echo -n "${ZSH_THEME_PYTHON_PREFIX:=" 🐍"}${PYTHON_VERSION}${ZSH_THEME_PYTHON_SUFFIX:=" "}"
+    echo -n "${ZSH_THEME_PYTHON_PREFIX:=" "}${PYTHON_VERSION}${ZSH_THEME_PYTHON_SUFFIX:=" "}"
   fi
 }
 
-### Virtualenv [(e) envName]
+### Virtualenv [(e) envName] 
 
-ZSH_THEME_VIRTUALENV_PREFIX=" [%{$fg[blue]%}(e) "
+ZSH_THEME_VIRTUALENV_PREFIX=" [%{$fg[blue]%} "
 ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}]"
 
-### Docker 🐳17.12.0-ce
+### Docker 🐳17.12.0-ce 
 
 docker_prompt_info () {
   if which docker 2>/dev/null 1>/dev/null && [[ -f "./Dockerfile" || -f "./docker-compose.yml" ]] ; then
     DOCKER_VERSION=`docker -v | awk '{print substr($3, 0, length($3))}'`
-    echo -n "${ZSH_THEME_DOCKER_PREFIX:=" 🐳"}${DOCKER_VERSION}${ZSH_THEME_DOCKER_SUFFIX:=""}"
+    echo -n "${ZSH_THEME_DOCKER_PREFIX:=" "}${DOCKER_VERSION}${ZSH_THEME_DOCKER_SUFFIX:=""}"
   fi
 }
 
