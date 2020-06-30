@@ -72,6 +72,15 @@ bureau_git_prompt () {
 
 ZSH_THEME_NVM_PROMPT_PREFIX=" ⬡ "
 ZSH_THEME_NVM_PROMPT_SUFFIX=""
+nvm_prompt_info () {
+    [ ! -z `ls -1 | grep \.js$ | head -1` ] || return
+	[[ -f "$NVM_DIR/nvm.sh" ]] || return
+	local nvm_prompt
+	nvm_prompt=$(node -v 2>/dev/null) 
+	[[ "${nvm_prompt}x" == "x" ]] && return
+	nvm_prompt=${nvm_prompt:1} 
+	echo "${ZSH_THEME_NVM_PROMPT_PREFIX}${nvm_prompt}${ZSH_THEME_NVM_PROMPT_SUFFIX}"
+}
 
 ### Python 🐍3.6.3
 
