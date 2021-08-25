@@ -100,7 +100,7 @@ ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}]"
 
 docker_prompt_info () {
   if which docker 2>/dev/null 1>/dev/null && [[ -f "./Dockerfile" || -f "./docker-compose.yml" ]] ; then
-    DOCKER_VERSION=`docker -v | awk '{print substr($3, 0, length($3))}'`
+    DOCKER_VERSION=`docker -v | awk -F'[, ]' '{print $3}'`
     echo -n "${ZSH_THEME_DOCKER_PREFIX:=" 🐳"}${DOCKER_VERSION}${ZSH_THEME_DOCKER_SUFFIX:=""}"
   fi
 }
