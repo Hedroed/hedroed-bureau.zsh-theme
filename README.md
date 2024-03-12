@@ -35,4 +35,4 @@ https://github.com/w00fz/w00fz-bureau.zsh-theme
 https://github.com/ryanoasis/nerd-fonts
 https://wiki.parabola.nu/Zsh
 https://github.com/agnoster/agnoster-zsh-theme/blob/master/agnoster.zsh-theme#L76
-https://unicode-table.com/fr/1F433/
+https://symbl.cc/fr/1F433/
